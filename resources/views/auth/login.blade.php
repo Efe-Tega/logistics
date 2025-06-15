@@ -63,14 +63,13 @@
                             @csrf
                             <div class="row py-3">
                                 <div class="col-sm-10 col-md-9 m-auto">
-                                    <div class="mb-3">
-                                        <input type="email" placeholder="Email Address"
-                                            class='form-control @error('email') is-invalid @enderror' name='email'
-                                            required>
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
 
-                                        @error('email')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
+                                    <div class="mb-3">
+                                        <input type="email" placeholder="Email Address" class='form-control'
+                                            name='email' required>
                                     </div>
                                     <div class="mb-4">
                                         <input type="password" placeholder="Password" class='form-control'

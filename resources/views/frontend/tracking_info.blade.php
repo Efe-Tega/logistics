@@ -304,7 +304,7 @@
                                 </span>
                                 @if ($invoice)
                                     <a href="{{ route('invoice', $trackingDetails->id) }}" class="invoice btn btn-sm"
-                                        style="background-color: #FB7405; color:#fff;">
+                                        style="background-color: #0B5ED7; color:#fff;">
                                         Print Invoice
                                     </a>
                                 @endif

@@ -80,7 +80,7 @@
 
         .invoice-box table tr.heading td {
             background: #0D0D23;
-            border-bottom: 1px solid #FB7405;
+            border-bottom: 1px solid #0B5ED7;
             font-weight: bold;
             padding: 8px;
             color: white;
@@ -141,7 +141,7 @@
         }
 
         .print-button {
-            background-color: #FB7405;
+            background-color: #0B5ED7;
             color: white;
             padding: 10px 20px;
             border: none;

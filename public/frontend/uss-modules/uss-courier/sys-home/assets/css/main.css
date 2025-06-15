@@ -23,7 +23,7 @@
 /* Colors */
 :root {
     --color-default: #0a0d13;
-    --color-primary: #fb7405;
+    --color-primary: #0b5ed7;
     --color-secondary: #292738;
 }
 
@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-    color: #ff9035;
+    color: #0d42ffcc;
     text-decoration: none;
 }
 
@@ -79,7 +79,7 @@ section {
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-bottom: 0;
-    color: #fb7405;
+    color: #0b5ed7;
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
@@ -298,7 +298,7 @@ section {
 }
 
 .header .logo img {
-    max-height: 50px;
+    max-height: 80px;
     margin-right: 6px;
 }
 
@@ -370,7 +370,7 @@ section {
     .navbar .get-a-quote:hover,
     .navbar .get-a-quote:focus:hover {
         color: #fff;
-        background: #ff9035;
+        background: #0d42ffcc;
     }
 
     .navbar .dropdown ul {
@@ -515,7 +515,7 @@ section {
     .navbar .get-a-quote:hover,
     .navbar .get-a-quote:focus:hover {
         color: #fff;
-        background: #ff9035;
+        background: #0d42ffcc;
     }
 
     .navbar .dropdown ul,
@@ -586,7 +586,7 @@ section {
 }
 
 .featured-services .service-item .icon i {
-    color: #fb7405;
+    color: #0b5ed7;
     font-size: 48px;
     transition: 0.3s;
 }
@@ -639,7 +639,7 @@ section {
     font-weight: 700;
     font-size: 32px;
     font-family: var(--font-secondary);
-    color: #fb7405;
+    color: #0b5ed7;
 }
 
 .about .content ul {
@@ -787,7 +787,7 @@ section {
 }
 
 .services .card a {
-    color: #fb7405;
+    color: #0b5ed7;
     transition: 0.3;
 }
 
@@ -871,7 +871,7 @@ section {
 .features .features-item h3 {
     font-weight: 600;
     font-size: 26px;
-    color: #fb7405;
+    color: #0b5ed7;
 }
 
 .features .features-item ul {
@@ -1625,7 +1625,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-    background: #ff9035;
+    background: #0d42ffcc;
 }
 
 @keyframes animate-loading {
@@ -1768,7 +1768,7 @@ section {
 }
 
 .hero form .btn-primary:hover {
-    background-color: #ff9035;
+    background-color: #0d42ffcc;
 }
 
 .hero .stats-item {
@@ -1822,7 +1822,7 @@ section {
 }
 
 .footer .footer-info .logo img {
-    max-height: 55px;
+    max-height: 125px;
     margin-right: 6px;
 }
 

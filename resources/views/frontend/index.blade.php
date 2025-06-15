@@ -63,7 +63,7 @@
     <link href="{{ asset('frontend/uss-modules/uss-courier/sys-home/assets/css/main.css') }}" rel="stylesheet">
 
     <!-- Smartsupp Live Chat script -->
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         var _smartsupp = _smartsupp || {};
         _smartsupp.key = 'c5cb5fd19cf589c645f0a272897fffc7095a2f9b';
         window.smartsupp || (function(d) {
@@ -79,7 +79,7 @@
             c.src = 'https://www.smartsuppchat.com/loader.js?';
             s.parentNode.insertBefore(c, s);
         })(document);
-    </script>
+    </script> --}}
 
 </head>
 
@@ -127,7 +127,7 @@
                     </p>
 
                     <a href="{{ route('track') }}" class="col-lg-4 col-md-4 mx-auto btn"
-                        style="background-color: #FB7405; color:#fff;">
+                        style="background-color: #0B5ED7; color:#fff;">
                         Track & Trace</a>
 
                 </div>

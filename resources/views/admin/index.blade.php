@@ -2,6 +2,7 @@
 @section('admin')
     @php
         $shipmentRowCount = DB::table('trackings')->count();
+        $invoiceCount = DB::table('printed_docs')->count();
     @endphp
     <div class="page-content">
         <div class="container-fluid">
@@ -14,7 +15,8 @@
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">{{Auth::user()->web_name}}</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">{{ Auth::user()->web_name }}</a>
+                                </li>
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
@@ -30,7 +32,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <div class="flex-grow-1">
-                                    <p class="text-truncate font-size-14 mb-2">All Shipments</p>
+                                    <p class="text-truncate font-size-14 mb-2">Total Shipments</p>
                                     <h4 class="mb-2">{{ $shipmentRowCount }}</h4>
 
                                 </div>
@@ -44,13 +46,13 @@
                     </div><!-- end card -->
                 </div><!-- end col -->
 
-                {{-- <div class="col-xl-3 col-md-6">
+                <div class="col-xl-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
                                 <div class="flex-grow-1">
-                                    <p class="text-truncate font-size-14 mb-2">Booking Requests</p>
-                                    <h4 class="mb-2">5</h4>
+                                    <p class="text-truncate font-size-14 mb-2">Total Invoice</p>
+                                    <h4 class="mb-2">{{ $invoiceCount }}</h4>
 
                                 </div>
                                 <div class="avatar-sm">
@@ -61,7 +63,7 @@
                             </div>
                         </div><!-- end cardbody -->
                     </div><!-- end card -->
-                </div><!-- end col --> --}}
+                </div><!-- end col -->
 
             </div><!-- end row -->
 

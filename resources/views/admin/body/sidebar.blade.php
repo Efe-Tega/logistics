@@ -27,28 +27,28 @@
 
                 <li>
                     <a href="{{ route('all.shipment') }}" class="waves-effect">
-                        <i class=" ri-shopping-cart-line"></i>
+                        <i class="ri-folder-open-line"></i>
                         <span>All Shipment</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ route('edit.status') }}" class="waves-effect">
-                        <i class=" ri-shopping-cart-line"></i>
+                        <i class="ri-file-edit-line"></i>
                         <span>Edit Shipment Status</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ route('travel.history') }}" class="waves-effect">
-                        <i class=" ri-shopping-cart-line"></i>
+                        <i class=" ri-todo-line"></i>
                         <span>Add / Edit Travel History</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ route('generate.invoice') }}" class="waves-effect">
-                        <i class=" ri-shopping-cart-line"></i>
+                        <i class="ri-file-info-line"></i>
                         <span>Generate Invoice</span>
                     </a>
                 </li>

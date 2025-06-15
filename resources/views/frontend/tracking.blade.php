@@ -51,7 +51,7 @@
                     <div class='input-group'>
                         <input type="text" name="tracking_no" class="form-control form-control-lg"
                             placeholder="Track ID" value='' required="">
-                        <button type="submit" class="btn " style="background: #fb7405; color: #fff;">
+                        <button type="submit" class="btn " style="background: #0B5ED7; color: #fff;">
                             Track & Trace
                         </button>
                     </div>

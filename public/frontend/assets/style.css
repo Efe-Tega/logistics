@@ -52,7 +52,7 @@ body {
     position: relative;
 }
 .track .step.active:before {
-    background: #fb7405;
+    background: #0b5ed7;
 }
 .track .step::before {
     height: 7px;
@@ -63,7 +63,7 @@ body {
     top: 13px;
 }
 .track .step.active .icon {
-    background: #fb7405;
+    background: #0b5ed7;
     color: #fff;
 }
 .track .icon {
@@ -150,7 +150,7 @@ p {
     padding: 1.6rem 0;
 }
 .tracking-status-intransit {
-    background-color: #fb7405;
+    background-color: #0b5ed7;
 }
 .tracking-status-outfordelivery {
     background-color: #f5a551;
