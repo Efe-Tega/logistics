@@ -184,7 +184,7 @@
                     <table>
                         <tr>
                             <td>
-                                Prime Trust Logistics Co.<br>
+                                {{ config('app.name') }} Co.<br>
                                 123 Cargo Lane<br>
                                 Transport City, TC 12345
                             </td>

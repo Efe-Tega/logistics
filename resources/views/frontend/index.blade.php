@@ -15,14 +15,18 @@
     <title>
         {{ config('app.name') }} || Home
     </title>
-    <meta name="title" content="Prime Trust Logistics || Award wining delivery" />
+    <meta name="title" content="AL Global Logistics || Award wining delivery" />
     <meta name="description"
         content="Experience reliable deliveries with our dedicated team, cutting-edge tracking
         technology and a commitment to prompt service. Ship with confidence- Your parcels, our priority" />
     <meta name="keywords"
-        content="website,services,prime trust , prime trust delivery, prime trust logistics, logistics service,parcels, courier, delivery company, delivery agency" />
+        content="website,services,AL global, al global logistics , al global delivery, american liquidation delivery, american liquidation logistics, logistics service,parcels, courier, delivery company, delivery agency" />
 
-    <link rel="shortcut icon" href="{{ asset('frontend/assets/favicon.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('frontend/assets/favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('frontend/assests/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('frontend/assests/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('frontend/assests/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('frontend/assests/site.webmanifest') }}">
 
 
     <script>
@@ -35,7 +39,8 @@
     <link rel='stylesheet' href='{{ asset('frontend/uss-core/assets/css/animate.min.css') }}' data-rc='animate'>
     <link rel='stylesheet' href='{{ asset('frontend/uss-core/assets/vendor/glightbox/glightbox.min.css') }}'
         data-rc='glightbox'>
-    <link rel='stylesheet' href='{{ asset('frontend/uss-core/assets/vendor/toastr/toastr.min.css') }}' data-rc='toastr'>
+    <link rel='stylesheet' href='{{ asset('frontend/uss-core/assets/vendor/toastr/toastr.min.css') }}'
+        data-rc='toastr'>
     <link rel='stylesheet' href='{{ asset('frontend/uss-core/assets/css/font-size.min.css') }}' data-rc='font-size'>
     <link rel='stylesheet' href='{{ asset('frontend/uss-core/assets/css/main.css') }}' data-rc='main-css'>
     <link rel='stylesheet' href='{{ asset('frontend/uss-modules/uss-courier/style.css') }}' />
@@ -158,10 +163,9 @@
                         <div class="icon flex-shrink-0"><i class="fa-solid fa-truck"></i></div>
                         <div>
                             <h4 class="title">Our People</h4>
-                            <p class="description">Prime Trust Logistics is not only asset-backed but our
-                                shareholders
-                                are
-                                the best the industry has to offer and provide many years of logistics experience. </p>
+                            <p class="description">{{ config('app.name') }} is not only asset-backed but our
+                                shareholders are the best the industry has to offer and provide many years of logistics
+                                experience. </p>
 
                         </div>
                     </div><!-- End Service Item -->
@@ -425,4 +429,4 @@
     <script src="{{ asset('frontend/uss-modules/uss-courier/sys-home/assets/js/main.js') }}"></script>
 </body>
 
-</html
+</html>
