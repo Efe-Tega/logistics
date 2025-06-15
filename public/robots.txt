@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /frontend/tracking
+Disallow: /frontend/tracking_info

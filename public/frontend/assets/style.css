@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+body {
+    background-color: #eeeeee;
+    font-family: "Open Sans", serif;
+}
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.1rem;
+}
+.card-header:first-child {
+    border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
+}
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.track {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px;
+}
+.track .step {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -13px;
+    text-align: center;
+    position: relative;
+}
+.track .step.active:before {
+    background: #fb7405;
+}
+.track .step::before {
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 13px;
+}
+.track .step.active .icon {
+    background: #fb7405;
+    color: #fff;
+}
+.track .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd;
+}
+.track .step.active .text {
+    font-weight: 400;
+    color: #000;
+}
+.track .text {
+    display: block;
+    margin-top: 7px;
+}
+.itemside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+.itemside .aside {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+.img-sm {
+    width: 80px;
+    height: 80px;
+    padding: 7px;
+}
+ul.row,
+ul.row-sm {
+    list-style: none;
+    padding: 0;
+}
+.itemside .info {
+    padding-left: 15px;
+    padding-right: 7px;
+}
+.itemside .title {
+    display: block;
+    margin-bottom: 5px;
+    color: #212529;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.btn-warning {
+    color: #ffffff;
+    background-color: #ee5435;
+    border-color: #ee5435;
+    border-radius: 1px;
+}
+.btn-warning:hover {
+    color: #ffffff;
+    background-color: #ff2b00;
+    border-color: #ff2b00;
+    border-radius: 1px;
+}
+
+/* New tracking style */
+
+.tracking-detail {
+    padding: 3rem 0;
+}
+#tracking {
+    margin-bottom: 1rem;
+}
+[class*="tracking-status-"] p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+[class*="tracking-status-"] {
+    padding: 1.6rem 0;
+}
+.tracking-status-intransit {
+    background-color: #fb7405;
+}
+.tracking-status-outfordelivery {
+    background-color: #f5a551;
+}
+.tracking-status-deliveryoffice {
+    background-color: #f7dc6f;
+}
+.tracking-status-delivered {
+    background-color: #4cbb87;
+}
+.tracking-status-attemptfail {
+    background-color: #b789c7;
+}
+.tracking-status-error,
+.tracking-status-exception {
+    background-color: #d26759;
+}
+.tracking-status-expired {
+    background-color: #616e7d;
+}
+.tracking-status-pending {
+    background-color: #ccc;
+}
+.tracking-status-inforeceived {
+    background-color: #214977;
+}
+.tracking-list {
+    border: 1px solid #e5e5e5;
+}
+.tracking-item {
+    border-left: 1px solid #e5e5e5;
+    position: relative;
+    padding: 2rem 1.5rem 0.5rem 2.5rem;
+    font-size: 0.9rem;
+    margin-left: 3rem;
+    min-height: 5rem;
+}
+.tracking-item:last-child {
+    padding-bottom: 4rem;
+}
+.tracking-item .tracking-date {
+    margin-bottom: 0.5rem;
+}
+.tracking-item .tracking-date span {
+    color: #888;
+    font-size: 85%;
+    padding-left: 0.4rem;
+}
+.tracking-item .tracking-content {
+    padding: 0.5rem 0.8rem;
+    background-color: #f4f4f4;
+    border-radius: 0.5rem;
+}
+.tracking-item .tracking-content span {
+    display: block;
+    color: #888;
+    font-size: 85%;
+}
+.tracking-item .tracking-icon {
+    line-height: 2.6rem;
+    position: absolute;
+    left: -1.3rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    background-color: #fff;
+    color: #fff;
+}
+.tracking-item .tracking-icon.status-sponsored {
+    background-color: #f68;
+}
+.tracking-item .tracking-icon.status-delivered {
+    background-color: #4cbb87;
+}
+.tracking-item .tracking-icon.status-outfordelivery {
+    background-color: #f5a551;
+}
+.tracking-item .tracking-icon.status-deliveryoffice {
+    background-color: #f7dc6f;
+}
+.tracking-item .tracking-icon.status-attemptfail {
+    background-color: #b789c7;
+}
+.tracking-item .tracking-icon.status-exception {
+    background-color: #d26759;
+}
+.tracking-item .tracking-icon.status-inforeceived {
+    background-color: #214977;
+}
+.tracking-item .tracking-icon.status-intransit {
+    color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+    font-size: 0.6rem;
+}
+@media (min-width: 992px) {
+    .tracking-item {
+        margin-left: 10rem;
+    }
+    .tracking-item .tracking-date {
+        position: absolute;
+        left: -10rem;
+        width: 7.5rem;
+        text-align: right;
+    }
+    .tracking-item .tracking-date span {
+        display: block;
+    }
+    .tracking-item .tracking-content {
+        padding: 0;
+        background-color: transparent;
+    }
+}
