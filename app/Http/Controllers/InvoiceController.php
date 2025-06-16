@@ -21,8 +21,6 @@ class InvoiceController extends Controller
     {
         $request->validate([
             'tracking_id' => 'required',
-            'bank_name' => 'required',
-            'acct_no' => 'required',
             'frieght_amount' => 'required',
             'warehouse_fee' => 'required',
             'custom_fee' => 'required',
@@ -42,8 +40,6 @@ class InvoiceController extends Controller
 
         PrintedDoc::insert([
             'tracking_id' => $trackingId,
-            'bank_name' => $request->bank_name,
-            'acct_no' => $request->acct_no,
             'frieght_amount' => $request->frieght_amount,
             'warehouse_fee' => $request->warehouse_fee,
             'custom_fee' => $request->custom_fee,
@@ -68,8 +64,6 @@ class InvoiceController extends Controller
     public function updateInvoice(Request $request)
     {
         $request->validate([
-            'bank_name' => 'required',
-            'acct_no' => 'required',
             'frieght_amount' => 'required',
             'warehouse_fee' => 'required',
             'custom_fee' => 'required',
@@ -78,8 +72,6 @@ class InvoiceController extends Controller
         $id = $request->id;
 
         PrintedDoc::findOrFail($id)->update([
-            'bank_name' => $request->bank_name,
-            'acct_no' => $request->acct_no,
             'frieght_amount' => $request->frieght_amount,
             'warehouse_fee' => $request->warehouse_fee,
             'custom_fee' => $request->custom_fee,

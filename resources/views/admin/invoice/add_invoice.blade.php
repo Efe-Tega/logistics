@@ -38,26 +38,6 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="inputFirstName" class="form-label">Bank Name</label>
-                                <input type="text" class="form-control" id="inputFirstName" name="bank_name"
-                                    value="{{ old('bank_name') }}" placeholder="Enter bank name">
-
-                                @error('bank_name')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Account Number</label>
-                                <input type="text" class="form-control" name="acct_no" value="{{ old('acct_no') }}"
-                                    placeholder="Enter account number" />
-
-                                @error('acct_no')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <div class="col-md-6">
                                 <label class="form-label">Freight Amount</label>
                                 <input type="number" class="form-control timepicker" name="frieght_amount"
                                     value="{{ old('frieght_amount') }}" placeholder="Enter freight amount" />

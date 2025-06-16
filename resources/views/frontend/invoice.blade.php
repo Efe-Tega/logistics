@@ -185,20 +185,21 @@
                         <tr>
                             <td>
                                 {{ config('app.name') }} Co.<br>
-                                123 Cargo Lane<br>
-                                Transport City, TC 12345
+                                32 W Superior St,<br>
+                                Chicago, IL 60654, United states
                             </td>
 
                             <td>
-                                {{ $tracking->shipper_fullname }}<br>
-                                {{ $tracking->shipper_phone }}<br>
-                                {{ $tracking->shipper_email }}
+                                {{ $tracking->receiver_fullname }}<br>
+                                {{ $tracking->receiver_phone }}<br>
+                                {{ $tracking->receiver_email }}
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
 
+            {{-- 
             <tr class="heading">
                 <td> Payment Method</td>
                 <td> Check #</td>
@@ -207,7 +208,7 @@
             <tr class="details">
                 <td>Bank Transfer </td>
                 <td> {{ $invoice->acct_no }}</td>
-            </tr>
+            </tr> --}}
 
             <tr class="heading">
                 <td>Service Description</td>
