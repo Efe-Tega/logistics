@@ -63,9 +63,10 @@
     <link href="{{ asset('frontend/uss-modules/uss-courier/sys-home/assets/css/main.css') }}" rel="stylesheet">
 
     <!-- Smartsupp Live Chat script -->
-    {{-- <script type="text/javascript">
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
         var _smartsupp = _smartsupp || {};
-        _smartsupp.key = 'c5cb5fd19cf589c645f0a272897fffc7095a2f9b';
+        _smartsupp.key = '4cf261b628972c346dac086f5a57512bfa781ffa';
         window.smartsupp || (function(d) {
             var s, c, o = smartsupp = function() {
                 o._.push(arguments)
@@ -79,7 +80,8 @@
             c.src = 'https://www.smartsuppchat.com/loader.js?';
             s.parentNode.insertBefore(c, s);
         })(document);
-    </script> --}}
+    </script>
+
 
 </head>
 

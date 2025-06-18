@@ -27,11 +27,12 @@ class TrackingDetailsController extends Controller
     {
         $requestedShipment = $request->tracking_no;
         $trackingDetails = Tracking::where('tracking_no', $requestedShipment)->first();
-        $invoice = PrintedDoc::where('tracking_id', $trackingDetails->id)->first();
 
         if (!$trackingDetails) {
             return back()->with('error', 'Invalid Tracking Number');
         }
+
+        $invoice = PrintedDoc::where('tracking_id', $trackingDetails->id)->first();
 
         $trackingHistoryDetails = TravelHistory::where('tracking_id', $trackingDetails->id)
             ->orderBy('created_at', 'desc')

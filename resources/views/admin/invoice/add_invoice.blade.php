@@ -100,8 +100,6 @@
                                         <th>S/N</th>
                                         <th> Tracking Number</th>
                                         <th> Receiver's Name</th>
-                                        <th> Bank Name</th>
-                                        <th> Account Number </th>
                                         <th> Freight Amount </th>
                                         <th> Warehouse Fee </th>
                                         <th> Custom Fee </th>
@@ -115,8 +113,6 @@
                                             <td>{{ $invoice->tracking->tracking_no }} </td>
                                             <td>
                                                 {{ $invoice->tracking->receiver_fullname }}</td>
-                                            <td>{{ $invoice->bank_name }}</td>
-                                            <td>{{ $invoice->acct_no }}</td>
                                             <td>${{ number_format($invoice->frieght_amount, 2) }}</td>
                                             <td>${{ number_format($invoice->warehouse_fee, 2) }}</td>
                                             <td>${{ number_format($invoice->custom_fee, 2) }}</td>

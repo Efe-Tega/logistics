@@ -60,12 +60,50 @@
             height: 350px;
             width: 100%;
         }
+
+        .outer-border-table {
+            border: 1px solid #dee2e6;
+            border-collapse: collapse;
+        }
+
+        .outer-border-table th,
+        .outer-border-table td {
+            border: none;
+        }
+
+
+        /* Hide vertical layout on large screens */
+        .vertical-table {
+            display: none;
+        }
+
+        /* Show vertical layout on small screens only */
+        @media (max-width: 767.98px) {
+            .horizontal-table {
+                display: none;
+            }
+
+            .vertical-table {
+                display: block;
+            }
+
+            .vertical-table .table {
+                border: 1px solid #dee2e6 !important;
+                border-collapse: separate !important;
+                border-spacing: 0 !important;
+            }
+
+            .vertical-table th,
+            .vertical-table td {
+                border: none !important;
+            }
+        }
     </style>
 
     <!-- Smartsupp Live Chat script -->
     <script type="text/javascript">
         var _smartsupp = _smartsupp || {};
-        _smartsupp.key = 'c5cb5fd19cf589c645f0a272897fffc7095a2f9b';
+        _smartsupp.key = '4cf261b628972c346dac086f5a57512bfa781ffa';
         window.smartsupp || (function(d) {
             var s, c, o = smartsupp = function() {
                 o._.push(arguments)
@@ -83,7 +121,6 @@
 </head>
 
 <body class="uss">
-
     <!-- ======= Header ======= -->
     <header id="header" class="header d-flex align-items-center fixed-top"
         style="background: rgba(14, 29, 52, 0.9);padding: 3px 0 0;">
@@ -107,144 +144,236 @@
                     <li><a class="get-a-quote" href="{{ route('track') }}">Track Order</a></li>
                 </ul>
             </nav><!-- .navbar -->
-
         </div>
     </header>
 
     <!-- End Header -->
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-
         <div class="page-header d-flex align-items-center"
             style="background-image: url('{{ asset('frontend/uss-modules/uss-courier/sys-home/assets/img/page-header.jpg') }}'); padding-top: 100px; padding-bottom: 40px;">
             <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
-
                     <div class="col-lg-6 text-center">
                         <h2>Tracking Details</h2>
                     </div>
-
                 </div>
             </div>
         </div>
-
-
-
     </div><!-- End Breadcrumbs -->
+
     <div id='main'>
         <div class="container">
-            <h1 class='display-6'>YOUR TRACK DETAIL</h1>
-            <article class="card">
-                <header class="card-header" style="background: #0D0D23"> </header>
+            <div class="row">
+                <h1 class='display-6'>YOUR TRACK DETAIL</h1>
 
-
-                <div class="card-body">
-                    <h6>Tracking Number: {{ $trackingDetails->tracking_no }}</h6>
+                <div class="col-12 col-lg-6">
                     <article class="card">
-                        <div class="card-body row">
-                            <div class="col"> <strong>Estimated Delivery Date:</strong>
-                                <br>{{ $trackingDetails->expected_delivery_date }}
+                        <header class="card-header" style="background: #0D0D23"> </header>
+
+                        <div class="card-body">
+                            <div class="barcode text-center">
+                                <img src="{{ asset('upload/barcode.gif') }}" alt="">
                             </div>
 
-                            <div class="col"> <strong>Status:</strong> <br> {{ $trackingDetails->shipment_status }}
+                            <div class="info mt-5">
+                                <div class="shipper-info">
+                                    <h5>Shipper Information</h5>
+                                    <div class="d-flex flex-column">
+                                        <span>American Liquidation Deal</span>
+                                        <span>204 Austin Rd, Waterbury, CT06207, USA</span>
+                                        <span>+1(713)364-9451</span>
+                                        <span>americanliquidationdeal@gmail.com</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="receiver-info">
+                                    <h5>Receiver Information</h5>
+                                    <div class="d-flex flex-column">
+                                        <span>Daniel Martin Gould</span>
+                                        <span>Cartridge Recycling Uk limited Unit 17, Denbigh Hall Industrial Estate
+                                            Bletchley,
+                                            Milton Keynes MK3 7QT United Kingdom</span>
+                                        <span>+44 7708 014676</span>
+                                        <span>info@catridgerecyclinguk.com</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col"> <strong>Current Location:</strong> <br>
-                                {{ $trackingHistoryDetails->travel_history_location ?? '' }}</div>
                         </div>
                     </article>
-                    <div class="track">
-                        @if ($trackingDetails->shipment_status == 'Pending')
-                            <div class="step active">
-                                <span class="icon"> <i class="fa fa-arrow-right"></i></span>
-
-                            </div>
-                            <div class="step ">
-                                <span class="icon"> </span>
-
-                            </div>
-                            <div class="step ">
-                                <span class="icon"> </span>
-
-                            </div>
-                            <div class="step ">
-                                <span class="icon"> </span>
-
-                            </div>
-                        @elseif($trackingDetails->shipment_status == 'Processing')
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active">
-                                <span class="icon"> <i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step ">
-                                <span class="icon"> </span>
-
-                            </div>
-                            <div class="step ">
-                                <span class="icon"> </span>
-
-                            </div>
-                        @elseif($trackingDetails->shipment_status == 'In Transit')
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step ">
-                                <span class="icon"> </span>
-
-                            </div>
-                        @elseif($trackingDetails->shipment_status == 'On Hold')
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active ">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step ">
-                                <span class="icon"> </span>
-
-                            </div>
-                        @elseif($trackingDetails->shipment_status == 'Delivered')
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-arrow-right"></i> </span>
-
-                            </div>
-                            <div class="step active">
-                                <span class="icon"><i class="fa fa-check"></i> </span>
-
-                            </div>
-                        @endif
-
-
-                    </div>
-
                 </div>
-            </article>
+
+                <div class="col-12 col-lg-6">
+                    <article class="card">
+                        <header class="card-header text-white text-uppercase text-center" style="background: #0D0D23">
+                            Shipment Status: Pending
+                        </header>
+
+                        <div class="card-body">
+                            <div class="info mt-3">
+                                <h5 class=" border-bottom p-2">Shipment Information</h5>
+                                <div class="d-flex flex-column gap-3">
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Origin:</span>
+                                        <span>United States</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Package:</span>
+                                        <span>20</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Status:</span>
+                                        <span>Pending</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Destination:</span>
+                                        <span>United Kingdom</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Carrier:</span>
+                                        <span>GLOEPRESSFRIGHT</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Shipment Mode:</span>
+                                        <span>Air Freight</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Weight:</span>
+                                        <span>52</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Carrier Reference No.:</span>
+                                        <span>G32DT</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Product:</span>
+                                        <span>20 Amazon Electronic Pallets</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Quantity:</span>
+                                        <span>20</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Payment Mode:</span>
+                                        <span>Bank Transfer</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Total Frieght:</span>
+                                        <span>1</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Expected Delivery Date:</span>
+                                        <span>2025-06-17</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Departure Time:</span>
+                                        <span>10:00am</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Pick-up Date:</span>
+                                        <span>2025-06-20</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Pick-up Time:</span>
+                                        <span>11:00am</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold text-dark">Comment:</span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <article class="card">
+                        <header class="card-header text-white text-uppercase text-center" style="background: #0D0D23">
+                            Package
+                        </header>
+
+                        <div class="">
+                            <!-- Horizontal for Large Screens -->
+                            <div class="table-responsive horizontal-table">
+                                <table class="table outer-border-table">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Qt</th>
+                                            <th>Piece Type</th>
+                                            <th>Description</th>
+                                            <th>Length(cm)</th>
+                                            <th>Width(cm)</th>
+                                            <th>Height(cm)</th>
+                                            <th>Weight(kg)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>20</td>
+                                            <td>Pallet</td>
+                                            <td>20 Amazon electronic pallets</td>
+                                            <td>122</td>
+                                            <td>102</td>
+                                            <td>86</td>
+                                            <td>251</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Vertical for Small Screens -->
+                            <div class="vertical-table">
+                                <table class="table outer-border-table">
+                                    <tbody>
+                                        <tr>
+                                            <th>Qt</th>
+                                            <td>John Doe</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Piece Type</th>
+                                            <td>Pallet</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Description</th>
+                                            <td>20 Amazon electronic pallets</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Length(cm)</th>
+                                            <td>122</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Width(cm)</th>
+                                            <td>102</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Height(cm)</th>
+                                            <td>86</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Weight(cm)</th>
+                                            <td>251</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="d-md-flex gap-3 px-4 mb-3 flex-wrap mx-auto">
+                            <div class="flex-grow-1 py-1">
+                                Total Volumetric Weight: 4280.74kg.
+                            </div>
+                            <div class="flex-grow-1 py-1">
+                                Total Volume: 4280.74kg.
+                            </div>
+                            <div class="flex-grow-1 py-1">
+                                Total Actual Weight: 4280.74kg.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
 
             @if (!$trackingHistoryDetails || !$trackingHistoryDetails->latitude == null)
                 <div id="map" class="mt-3"></div>
@@ -256,7 +385,7 @@
                     <div id="tracking-pre"></div>
                     <div id="tracking">
                         <div class="text-center tracking-status-intransit" style="background: #0D0D23; color: #fff">
-                            <p class="tracking-status text-tight" style="font-weight: bold">Travel History</p>
+                            <p class="tracking-status text-tight" style="font-weight: bold">Shipment History</p>
                         </div>
                         <div class="tracking-list">
 
@@ -283,82 +412,6 @@
                                 </div>
                             @endforeach
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            {{-- Shipment Details --}}
-
-            <div class="container-fluid">
-                <div id="ui-view" data-select2-id="ui-view">
-                    <div>
-                        <div class="card">
-
-                            <div class="card-header d-flex justify-content-between"
-                                style="background: #0D0D23; color: #fff">
-                                <span>
-                                    Tracking <strong>#{{ $trackingDetails->tracking_no }}</strong>
-                                </span>
-                                @if ($invoice)
-                                    <a href="{{ route('invoice', $trackingDetails->id) }}" class="invoice btn btn-sm"
-                                        style="background-color: #0B5ED7; color:#fff;">
-                                        Print Invoice
-                                    </a>
-                                @endif
-
-                            </div>
-
-                            <div class="card-body">
-                                <div class="row mb-4">
-                                    <div class="col-sm-4 col-md-6 mt-3">
-                                        <h6 class="mb-3">From:</h6>
-                                        <div>
-                                            <strong>{{ $trackingDetails->shipper_fullname }}</strong>
-                                        </div>
-                                        <div>Address: {{ $trackingDetails->shipper_address }},
-                                            {{ $trackingDetails->shipper_country }}</div>
-                                        <div>Email: {{ $trackingDetails->shipper_email }}</div>
-                                        <div>Phone: {{ $trackingDetails->shipper_phone }}</div>
-                                    </div>
-
-                                    <div class="col-sm-4 col-md-6 mt-3">
-                                        <h6 class="mb-3">To:</h6>
-                                        <div>
-                                            <strong>{{ $trackingDetails->receiver_fullname }}</strong>
-                                        </div>
-                                        <div>Address: {{ $trackingDetails->receiver_address }},
-                                            {{ $trackingDetails->receiver_country }}</div>
-                                        <div>Email: {{ $trackingDetails->receiver_email }}</div>
-                                        <div>Phone: {{ $trackingDetails->receiver_phone }}</div>
-                                    </div>
-                                </div>
-
-                                <div class="table-responsive-sm">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Item</th>
-                                                <th>Description</th>
-                                                <th class="center">Quantity</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-
-                                                <td class="left">{{ $trackingDetails->shipment_content }}</td>
-                                                <td class="left">{{ $trackingDetails->shipment_desc }}</td>
-                                                <td class="center">{{ $trackingDetails->shipment_quantity }}</td>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
                         </div>
                     </div>
                 </div>

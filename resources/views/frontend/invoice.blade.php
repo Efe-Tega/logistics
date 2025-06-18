@@ -158,7 +158,7 @@
 
 <body>
     <div class="invoice-box">
-        <img src="{{ asset('backend/assets/images/favicon.png') }}" alt="Watermark" class="watermark">
+        <img src="{{ asset('backend/assets/images/logo.png') }}" alt="Watermark" class="watermark">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
                 <td colspan="2">
@@ -166,7 +166,7 @@
                         <tr>
                             <td class="title">
                                 <!-- Company Logo -->
-                                <img src="{{ asset('backend/assets/images/logo-light.png') }}" alt="Company Logo"
+                                <img src="{{ asset('backend/assets/images/logo.png') }}" alt="Company Logo"
                                     class="company-logo">
                             </td>
                             <td>
